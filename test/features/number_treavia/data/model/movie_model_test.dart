@@ -33,4 +33,26 @@ void main() {
               expect(result, tMovieModel);
             });
   });
+
+  group('to json', () {
+    test(
+        'should get JSON map containing proper data ',
+        () => () async {
+              // act
+              final result = tMovieModel.toJson();
+
+              // assert
+              final expectedJsonMap = {
+                "id": 693134,
+                "original_title": "Rebel Moon - Part Two: The Scargiver",
+                "overview":
+                    "The rebels gear up for battle against the ruthless forces of the Motherworld as unbreakable bonds are forged, heroes emerge — and legends are made.",
+                "poster_path": "/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+                "title": "Dune: Part Two",
+                "name": "Test name "
+              };
+
+              expect(result, expectedJsonMap);
+            });
+  });
 }
